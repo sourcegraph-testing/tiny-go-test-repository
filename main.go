@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strconv"
 )
 
 const basePath = "/tmp"
@@ -22,7 +23,7 @@ func loadFile(name string) (*os.File, error) {
 
 func main() {
 	for i := 0; i < 5; i++ {
-		f, err := loadFile(fmt.Sprintf("%d", i))
+		f, err := loadFile(strconv.Itoa(i))
 		if err != nil {
 			fmt.Printf("error: %s\n", err)
 			os.Exit(1)
