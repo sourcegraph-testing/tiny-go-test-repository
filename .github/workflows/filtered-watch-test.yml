@@ -1,0 +1,20 @@
+name: Filtered watch live negative control
+
+on:
+  push:
+    branches: [k/filtered-watch-live-test]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  bot-comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post bot negative control
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api --method POST repos/sourcegraph-testing/tiny-go-test-repository/issues/41/comments \
+            -f body='Filtered watch live bot negative control'
