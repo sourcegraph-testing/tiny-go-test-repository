@@ -1,0 +1,3 @@
+1. Temporary fixture for the filtered-watch live test.
+2. This file is test data, not production code.
+3. Keep the draft PR open for event delivery checks.
